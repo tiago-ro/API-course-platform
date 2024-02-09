@@ -12,7 +12,7 @@ module.exports = {
       titulo: {
         type: Sequelize.STRING
       },
-      descircao: {
+      descricao: {
         type: Sequelize.STRING
       },
       data_inicio: {
