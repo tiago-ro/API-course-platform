@@ -28,7 +28,7 @@ class Controller {
       const novoRegistroCriado = await this.entidadeService.criaRegistro(dadosParaCriacao);
       return res.status(200).json(novoRegistroCriado);
     } catch (erro) {
-      //erro
+      console.log(erro);
     }
   }
 
@@ -49,12 +49,12 @@ class Controller {
 
 
   async exclui(req, res) {
-    const { id }= req.params;
+    const { id } = req.params;
     try {
       await this.entidadeService.excluiRegistro(Number(id));
       return res.status(200).json({ mensagem: `id ${id} deletado` });
     } catch (erro) {
-      //erros
+      //erro
     }
   } 
 

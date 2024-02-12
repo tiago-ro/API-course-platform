@@ -14,8 +14,8 @@ class Services {
     return dataSource[this.model].findByPk(id);
   }
 
-  async criaRegistro() {
-    return dataSource[this.model].create();
+  async criaRegistro(dadosDoRegistro) {
+    return dataSource[this.model].create(dadosDoRegistro);
   }
 
   async atualizaRegistro(dadosAtualizados, id) {
@@ -28,7 +28,7 @@ class Services {
     return true;
   }
 
-  async excuiRegistro(id) {
+  async excluiRegistro(id) {
     return dataSource[this.model].destroy({ where: { id: id } });
   }
 }
