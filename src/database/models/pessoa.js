@@ -12,9 +12,13 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'docente_id'
       });
       Pessoa.hasMany(models.Matricula, {
-        foreignKey: 'curso_id',
+        foreignKey: 'estudante_id',
         scope: { status: 'matriculado' },
         as: 'aulasMatriculadas'
+      });
+      Pessoa.hasMany(models.Matricula, {
+        foreignKey: 'estudante_id',
+        as: 'todasAsMatriculas'
       });
     }
   }
